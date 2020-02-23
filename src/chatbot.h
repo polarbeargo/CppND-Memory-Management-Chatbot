@@ -24,8 +24,8 @@ private:
 
 public:
     // constructors / destructors
-    ChatBot();                     // constructor WITHOUT memory allocation
-    ChatBot(std::string filename); // constructor WITH memory allocation
+    ChatBot() { std::cout << "ChatBot Constructor" << std::endl; } // constructor WITHOUT memory allocation
+    // ChatBot(std::string filename);                                 // constructor WITH memory allocation
     ~ChatBot();
 
     //// STUDENT CODE
