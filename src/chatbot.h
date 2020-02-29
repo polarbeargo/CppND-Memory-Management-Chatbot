@@ -25,12 +25,16 @@ private:
 public:
     // constructors / destructors
     ChatBot() { std::cout << "ChatBot Constructor" << std::endl; } // constructor WITHOUT memory allocation
-    // ChatBot(std::string filename);                                 // constructor WITH memory allocation
+    ChatBot(std::string filename);                                 // constructor WITH memory allocation
     ~ChatBot();
 
     //// STUDENT CODE
     ////
-
+    ChatBot(const ChatBot & source);
+    ChatBot(ChatBot && source);
+    ChatBot &operator=(const ChatBot & source);
+    ChatBot &operator=(ChatBot && source);
+    ChatLogic * GetChatLogicHandle() {return _chatLogic;}
     ////
     //// EOF STUDENT CODE
 

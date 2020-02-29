@@ -35,7 +35,6 @@ ChatBot::ChatBot(std::string filename)
 ChatBot::~ChatBot()
 {
     std::cout << "ChatBot Destructor" << std::endl;
-
 }
 
 //// STUDENT CODE
@@ -141,4 +140,59 @@ int ChatBot::ComputeLevenshteinDistance(std::string s1, std::string s2)
     delete[] costs;
 
     return result;
+}
+
+ChatBot::ChatBot(const ChatBot &source)
+{
+    _image = new wxBitmap(*source._image);
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _currentNode = source._currentNode;   
+}
+
+ChatBot::ChatBot(ChatBot &&source)
+{
+
+    _image = source._image;
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _currentNode = source._currentNode;
+    
+    source._image = nullptr;
+    source._chatLogic = nullptr;
+    source._rootNode = nullptr;
+    source._currentNode = nullptr;
+}
+
+ChatBot &ChatBot::operator=(const ChatBot &source)
+{
+    if (&source == this)
+    {
+        return source;
+    }
+
+    _image = new wxBitmap(*source._image);
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _currentNode = source._currentNode;
+    return *this;
+}
+
+ChatBot &ChatBot::operator=(ChatBot &&source)
+{
+
+    if (&source == this)
+    {
+        return *this;
+    }
+
+    _image = source._image;
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _currentNode = source._currentNode;
+    source._image = nullptr;
+    source._chatLogic = nullptr;
+    source._rootNode = nullptr;
+    source._currentNode = nullptr;
+    return *this;
 }
