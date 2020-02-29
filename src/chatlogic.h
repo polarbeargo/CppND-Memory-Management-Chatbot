@@ -5,6 +5,7 @@
 #include <string>
 #include <memory>
 #include "chatgui.h"
+#include "chatbot.h"
 
 // forward declarations
 class ChatBot;
