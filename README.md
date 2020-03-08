@@ -65,4 +65,8 @@ ChatBot Destructor
 ```  
 
 ### Result :  
-<img src="images/chatbot.gif"/>
+<img src="images/chatbot.gif"/>  
+
+* High resolution demo on Youtube :  
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nYCe-sWHGF8/0.jpg)](https://youtu.be/nYCe-sWHGF8)  
