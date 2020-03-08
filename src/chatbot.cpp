@@ -12,7 +12,7 @@
 ChatBot::ChatBot()
 {
     // invalidate data handles
-    _image = nullptr;
+    _image = NULL;
     _chatLogic = nullptr;
     _rootNode = nullptr;
     _currentNode = nullptr;
@@ -144,6 +144,7 @@ int ChatBot::ComputeLevenshteinDistance(std::string s1, std::string s2)
 
 ChatBot::ChatBot(const ChatBot &source)
 {
+    std::cout << "ChatBot Copy Constructor \n";
     _image = new wxBitmap(*source._image);
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
@@ -152,13 +153,13 @@ ChatBot::ChatBot(const ChatBot &source)
 
 ChatBot::ChatBot(ChatBot &&source)
 {
-
+    std::cout << "ChatBot Copy Constructor \n";
     _image = source._image;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
 
-    source._image = nullptr;
+    source._image = NULL;
     source._chatLogic = nullptr;
     source._rootNode = nullptr;
     source._currentNode = nullptr;
@@ -166,6 +167,7 @@ ChatBot::ChatBot(ChatBot &&source)
 
 ChatBot &ChatBot::operator=(const ChatBot &source)
 {
+    std::cout << "ChatBot Copy Constructor \n";
     if (&source == this)
     {
         return *this;
@@ -178,7 +180,8 @@ ChatBot &ChatBot::operator=(const ChatBot &source)
 }
 
 ChatBot &ChatBot::operator=(ChatBot &&source)
-{
+{   
+    std::cout << "ChatBot Copy Constructor \n";
 
     if (&source == this)
     {
