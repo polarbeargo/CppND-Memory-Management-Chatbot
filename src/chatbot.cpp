@@ -8,7 +8,7 @@
 #include "graphedge.h"
 #include "chatbot.h"
 
-constructor WITHOUT memory allocation
+// constructor WITHOUT memory allocation
 ChatBot::ChatBot()
 {
     // invalidate data handles
